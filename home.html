@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nickolas Selhorst | Desenvolvedor Especialista em RPA</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Estilo base para a fonte e tema escuro */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e7eb;
+        }
+
+        /* Efeito de gradiente sutil no fundo */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 10% 20%, rgba(0, 128, 128, 0.15), transparent 30%),
+                        radial-gradient(circle at 80% 90%, rgba(79, 70, 229, 0.1), transparent 35%);
+        }
+
+        /* Estilos para a animação de entrada dos elementos */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Canvas para animação de fundo da seção 'Herói' */
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        /* Garante que o conteúdo do herói fique sobre o canvas */
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- CABEÇALHO DE NAVEGAÇÃO -->
+    <header class="bg-black/30 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">Nickolas<span class="text-teal-400"> Selhorst</span></a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#sobre" class="text-gray-300 hover:text-teal-400 transition-colors duration-300">Sobre</a>
+                <a href="#projetos" class="text-gray-300 hover:text-teal-400 transition-colors duration-300">Projetos</a>
+                <a href="#processo" class="text-gray-300 hover:text-teal-400 transition-colors duration-300">Meu Processo</a>
+                <a href="#contato" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Contato</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900">
+            <a href="#sobre" class="block text-center py-3 px-4 text-sm hover:bg-gray-800">Sobre</a>
+            <a href="#projetos" class="block text-center py-3 px-4 text-sm hover:bg-gray-800">Projetos</a>
+            <a href="#processo" class="block text-center py-3 px-4 text-sm hover:bg-gray-800">Meu Processo</a>
+            <a href="#contato" class="block text-center py-3 px-4 text-sm hover:bg-gray-800">Contato</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- SEÇÃO HERÓI - APRESENTAÇÃO INICIAL -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+            <canvas id="hero-canvas"></canvas>
+            <div class="hero-content container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
+                    Transformando Processos e <br class="hidden md:block">
+                    <span class="text-teal-400">Potencializando Resultados com RPA</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                    Especialista em automação inteligente com AutomationEdge e Python, criando robôs que otimizam o tempo, 
+                    reduzem custos e eliminam erros para empresas de diversos setores.
+                </p>
+                <a href="#projetos" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
+                    Conheça Meus Projetos
+                </a>
+            </div>
+        </section>
+
+        <!-- SEÇÃO SOBRE MIM -->
+        <section id="sobre" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-5 gap-12 items-center">
+                    <div class="md:col-span-2 scroll-reveal">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQHOB1dqRgw9DA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1726582627854?e=1756339200&v=beta&t=eVXNjziWB25iHv6Y5T-vRAkQ_m62pLXlMqy-YQwIO_A" alt="Foto profissional" class="rounded-xl shadow-2xl mx-auto"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x400/111827/a5f3fc?text=Sua+Foto';">
+                    </div>
+                    <div class="md:col-span-3 scroll-reveal">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Sobre Mim</h2>
+                        <p class="text-gray-400 mb-6">
+                            Olá! Sou um desenvolvedor de RPA diferenciado e apaixonado por resolver problemas de negócios através da tecnologia. 
+                            Com sólida experiência em ferramentas como <strong class="text-teal-400">AutomationEdge</strong>, <strong class="text-teal-400">n8n</strong> 
+                            e flexibilidade para desenvolver scripts em <strong class="text-teal-400">Python</strong>, <strong class="text-teal-400">VBScript</strong>, 
+                            <strong class="text-teal-400">JavaScript</strong>, <strong class="text-teal-400">PowerShell</strong> meu foco é entregar automações robustas, 
+                            escaláveis e que geram impacto real nos KPIs dos meus clientes.
+                        </p>
+                        <p class="text-gray-400 mb-8">
+                           Já atuei em projetos para as áreas de tecnologia, financeira, RH, logística e fiscal, 
+                           o que me deu uma visão ampla de como a automação pode ser um diferencial competitivo em qualquer setor.
+                        </p>
+                        <h3 class="text-xl font-bold text-white mb-4">Principais Competências</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="bg-gray-800 text-teal-300 text-sm font-medium px-4 py-2 rounded-full">AutomationEdge</span>
+                            <span class="bg-gray-800 text-teal-300 text-sm font-medium px-4 py-2 rounded-full">n8n</span>
+                            <span class="bg-gray-800 text-teal-300 text-sm font-medium px-4 py-2 rounded-full">PowerShell</span>
+                            <span class="bg-gray-800 text-teal-300 text-sm font-medium px-4 py-2 rounded-full">Python (Pandas, Selenium)</span>
+                            <span class="bg-gray-800 text-teal-300 text-sm font-medium px-4 py-2 rounded-full">Mapeamento de Processos (BPMN)</span>
+                            <span class="bg-gray-800 text-teal-300 text-sm font-medium px-4 py-2 rounded-full">SQL</span>
+                            <span class="bg-gray-800 text-teal-300 text-sm font-medium px-4 py-2 rounded-full">Integração via APIs REST</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE PROJETOS -->
+        <section id="projetos" class="py-20 md:py-32 bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 scroll-reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Projetos em Destaque</h2>
+                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto">Cases de sucesso que ilustram o poder da automação.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Projeto 1 -->
+                    <div class="bg-gray-800/60 p-8 rounded-xl shadow-lg border border-gray-700/50 flex flex-col scroll-reveal">
+                        <div class="flex-grow">
+                             <i data-lucide="calculator" class="w-12 h-12 text-teal-400 mb-4"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">Automação de Conciliação Fiscal</h3>
+                            <p class="text-gray-400 mb-6 text-sm">Robô que automatiza a conferência de milhares de notas fiscais contra registros do sistema ERP, identificando divergências em minutos.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-teal-400 mb-4">Resultados Quantificáveis:</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-300">Redução de Tempo Manual</span>
+                                    <span class="font-bold text-lg text-white counter" data-target="95">%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-300">Aumento de Precisão</span>
+                                    <span class="font-bold text-lg text-white counter" data-target="100">%</span>
+                                </div>
+                                 <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-300">Horas Economizadas/Mês</span>
+                                    <span class="font-bold text-lg text-white counter" data-target="80"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 2 -->
+                    <div class="bg-teal-500/10 p-8 rounded-xl shadow-lg border border-teal-500/30 flex flex-col scroll-reveal">
+                        <div class="flex-grow">
+                             <i data-lucide="users" class="w-12 h-12 text-teal-400 mb-4"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">Onboarding Automatizado de RH</h3>
+                            <p class="text-gray-400 mb-6 text-sm">Processo de ponta-a-ponta que cria contas de usuário, atribui permissões e envia e-mails de boas-vindas para novos colaboradores.</p>
+                        </div>
+                         <div>
+                            <h4 class="font-semibold text-teal-400 mb-4">Resultados Quantificáveis:</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-300">Redução do Lead Time</span>
+                                    <span class="font-bold text-lg text-white counter" data-target="85">%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-300">Erros de Setup</span>
+                                    <span class="font-bold text-lg text-white counter" data-target="0">%</span>
+                                </div>
+                                 <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-300">Satisfação do Novo Colaborador</span>
+                                    <span class="font-bold text-lg text-white">+<span class="counter" data-target="30"></span>%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 3 -->
+                    <div class="bg-gray-800/60 p-8 rounded-xl shadow-lg border border-gray-700/50 flex flex-col scroll-reveal">
+                        <div class="flex-grow">
+                             <i data-lucide="file-text" class="w-12 h-12 text-teal-400 mb-4"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">Extração de Dados de Faturas</h3>
+                            <p class="text-gray-400 mb-6 text-sm">Script Python com OCR para ler dados de faturas em PDF recebidas por e-mail e inseri-los no sistema de contas a pagar.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-teal-400 mb-4">Resultados Quantificáveis:</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-300">Processamento de Faturas</span>
+                                    <span class="font-bold text-lg text-white">+<span class="counter" data-target="500"></span>%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-300">Acurácia de Extração</span>
+                                    <span class="font-bold text-lg text-white counter" data-target="98">%</span>
+                                </div>
+                                 <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-300">Custo por Fatura Processada</span>
+                                    <span class="font-bold text-lg text-white">-<span class="counter" data-target="60"></span>%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO MEU PROCESSO -->
+        <section id="processo" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 scroll-reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Meu Processo de Trabalho</h2>
+                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto">Uma metodologia clara para garantir o sucesso do projeto, do início ao fim.</p>
+                </div>
+                <div class="relative">
+                    <!-- Linha do tempo (visual) -->
+                    <div class="hidden md:block absolute left-1/2 top-5 bottom-5 w-0.5 bg-gray-700"></div>
+                    
+                    <!-- Item 1 -->
+                    <div class="md:grid md:grid-cols-2 md:gap-8 items-center mb-16 scroll-reveal">
+                        <div class="text-center md:text-right md:pr-8 mb-4 md:mb-0">
+                             <h3 class="text-2xl font-bold text-teal-400">01. Descoberta</h3>
+                             <p class="text-gray-400">Imersão no seu processo para entender os desafios, gargalos e oportunidades de automação.</p>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <div class="bg-gray-800 p-4 rounded-full border-2 border-teal-500">
+                                <i data-lucide="search" class="w-10 h-10 text-teal-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Item 2 -->
+                    <div class="md:grid md:grid-cols-2 md:gap-8 items-center mb-16 scroll-reveal">
+                         <div class="flex justify-center items-center md:order-last">
+                            <div class="bg-gray-800 p-4 rounded-full border-2 border-teal-500">
+                                <i data-lucide="blueprint" class="w-10 h-10 text-teal-400"></i>
+                            </div>
+                        </div>
+                        <div class="text-center md:text-left md:pl-8 mt-4 md:mt-0">
+                             <h3 class="text-2xl font-bold text-teal-400">02. Desenho da Solução</h3>
+                             <p class="text-gray-400">Mapeamento do fluxo "To-Be" e criação do PDD (Process Design Document), o blueprint da automação.</p>
+                        </div>
+                    </div>
+                     <!-- Item 3 -->
+                    <div class="md:grid md:grid-cols-2 md:gap-8 items-center mb-16 scroll-reveal">
+                        <div class="text-center md:text-right md:pr-8 mb-4 md:mb-0">
+                             <h3 class="text-2xl font-bold text-teal-400">03. Desenvolvimento</h3>
+                             <p class="text-gray-400">Codificação do robô seguindo as melhores práticas de modularidade, tratamento de exceções e logs.</p>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <div class="bg-gray-800 p-4 rounded-full border-2 border-teal-500">
+                                <i data-lucide="bot" class="w-10 h-10 text-teal-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="md:grid md:grid-cols-2 md:gap-8 items-center scroll-reveal">
+                         <div class="flex justify-center items-center md:order-last">
+                            <div class="bg-gray-800 p-4 rounded-full border-2 border-teal-500">
+                                <i data-lucide="rocket" class="w-10 h-10 text-teal-400"></i>
+                            </div>
+                        </div>
+                        <div class="text-center md:text-left md:pl-8 mt-4 md:mt-0">
+                             <h3 class="text-2xl font-bold text-teal-400">04. Implantação e Suporte</h3>
+                             <p class="text-gray-400">Go-live assistido, acompanhamento inicial e transferência de conhecimento para sua equipe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE CONTATO -->
+        <section id="contato" class="py-20 md:py-32 bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 scroll-reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Vamos Conversar?</h2>
+                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto">Se você tem um processo que precisa ser otimizado, me envie uma mensagem. <br> Estou pronto para ajudar a encontrar a melhor solução de automação para o seu negócio.</p>
+                </div>
+                <div class="max-w-xl mx-auto scroll-reveal">
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="sr-only">Nome</label>
+                            <input type="text" name="name" id="name" autocomplete="name" required class="w-full bg-gray-800 border-gray-700 text-white rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition" placeholder="Seu nome">
+                        </div>
+                        <div>
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" name="email" id="email" autocomplete="email" required class="w-full bg-gray-800 border-gray-700 text-white rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition" placeholder="Seu e-mail">
+                        </div>
+                        <div>
+                            <label for="message" class="sr-only">Mensagem</label>
+                            <textarea name="message" id="message" rows="4" required class="w-full bg-gray-800 border-gray-700 text-white rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition" placeholder="Como posso ajudar?"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
+                                Enviar Mensagem
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-black">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <p class="text-gray-400 text-sm">&copy; 2025 Nickolas Selhorst. Todos os direitos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/nickolas-selhorst/" target="_blank" class="text-gray-400 hover:text-teal-400 transition-colors">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                     <a href="https://github.com/nickoboco" target="_blank" class="text-gray-400 hover:text-teal-400 transition-colors">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Substituir os ícones do Lucide
+        lucide.createIcons();
+
+        // Menu Mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Animação de entrada ao rolar a página
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Opcional: parar de observar depois que a animação acontece
+                    // revealObserver.unobserve(entry.target); 
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Animação de contagem dos números
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // velocidade da animação
+
+        const animateCounter = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const originalText = counter.innerText; // Store original text to preserve prefix/suffix
+            const prefix = originalText.match(/^[^\\d+-]*/)?.[0] || ''; // Capture non-digit, non-sign prefix
+            const suffix = originalText.match(/[^\\d%]*$/)?.[0] || ''; // Capture non-digit, non-% suffix
+            const isNegative = originalText.includes('-');
+
+            const updateCount = () => {
+                const currentCount = +counter.innerText.replace(/[^\\d.]/g, ''); // Remove all non-digits except decimal
+                const increment = target / speed;
+
+                if (currentCount < target) {
+                    let nextCount = Math.ceil(currentCount + increment);
+                    if (isNegative && nextCount > 0) nextCount = -nextCount; // Ensure negative if target was negative
+                    counter.innerText = prefix + nextCount + suffix;
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = prefix + target + suffix;
+                }
+            };
+            updateCount();
+        };
+        
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.8 });
+
+        counters.forEach(counter => {
+            // Initialize text based on target and original format
+            const target = +counter.getAttribute('data-target');
+            const originalText = counter.innerText;
+            const prefix = originalText.match(/^[^\\d+-]*/)?.[0] || '';
+            const suffix = originalText.match(/[^\\d%]*$/)?.[0] || '';
+            counter.innerText = prefix + '0' + suffix; // Start from 0, keeping original prefix/suffix
+            counterObserver.observe(counter);
+        });
+
+        // Animação de partículas no fundo do Herói
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray;
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) {
+                    this.directionX = -this.directionX;
+                }
+                if (this.y > canvas.height || this.y < 0) {
+                    this.directionY = -this.directionY;
+                }
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * .4) - .2;
+                let directionY = (Math.random() * .4) - .2;
+                let color = 'rgba(0, 128, 128, 0.8)';
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        function connect(){
+            let opacityValue = 1;
+            for(let a = 0; a < particlesArray.length; a++){
+                for(let b = a; b < particlesArray.length; b++){
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                    + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    if(distance < (canvas.width/7) * (canvas.height/7)){
+                        opacityValue = 1 - (distance/20000);
+                        ctx.strokeStyle = `rgba(79, 70, 229, ${opacityValue})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Use canvas dimensions
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connect();
+        }
+
+        window.addEventListener('resize', () => {
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+            init();
+        });
+        
+        init();
+        animate();
+
+    </script>
+</body>
+</html>
