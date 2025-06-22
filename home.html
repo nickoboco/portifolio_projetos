@@ -65,19 +65,25 @@
             position: relative;
             z-index: 1;
         }
+
+        .counter {
+            display: inline-block;
+            min-width: 3.5ch; /* Espaço para até 100% */
+            text-align: right;
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- CABEÇALHO DE NAVEGAÇÃO -->
     <header class="bg-black/30 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white">Nickolas<span class="text-teal-400"> Selhorst</span></a>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+        <div class="container mx-auto px-6 py-2 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold text-white flex items-center h-12">Nickolas<span class="text-teal-400">Selhorst</span></a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium h-12">
                 <a href="#sobre" class="text-gray-300 hover:text-teal-400 transition-colors duration-300">Sobre</a>
                 <a href="#projetos" class="text-gray-300 hover:text-teal-400 transition-colors duration-300">Projetos</a>
                 <a href="#processo" class="text-gray-300 hover:text-teal-400 transition-colors duration-300">Meu Processo</a>
-                <a href="#contato" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Contato</a>
+                <a href="#contato" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 ml-2">Contato</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white">
                 <i data-lucide="menu"></i>
@@ -98,12 +104,11 @@
             <canvas id="hero-canvas"></canvas>
             <div class="hero-content container mx-auto px-6">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
-                    Transformando Processos e <br class="hidden md:block">
-                    <span class="text-teal-400">Potencializando Resultados com RPA</span>
+                    Desenvolvedor RPA especializado em <span style="color:#F57E20">AutomationEdge </span>
                 </h1>
                 <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                    Especialista em automação inteligente com AutomationEdge e Python, criando robôs que otimizam o tempo, 
-                    reduzem custos e eliminam erros para empresas de diversos setores.
+                    Sou especialista em criar robôs que otimizam processos e geram resultados reais com a ferramenta AutomationEdge. 
+                    Atuo com consultorias que precisam de agilidade e confiança para entregar automações de ponta aos seus clientes.
                 </p>
                 <a href="#projetos" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
                     Conheça Meus Projetos
@@ -121,20 +126,24 @@
                     </div>
                     <div class="md:col-span-3 scroll-reveal">
                         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Sobre Mim</h2>
-                        <p class="text-gray-400 mb-6">
-                            Olá! Sou o Nickolas, um desenvolvedor RPA diferenciado e apaixonado por resolver problemas de negócios através da tecnologia.
-                            Iniciei minha jornada de tecnologia em 2013 como aprendiz de TI e trilhei um caminho que me levou a 
-                            gestão de equipes, onde atuei como líder, coordenador e gerente. Neste percurso, aprendi a importância de entender profundamente os processos 
-                            de negócio para criar soluções que realmente fazem a diferença e em 2020 descobri minha verdadeira paixão - RPA. Decidi me especializar em automação de processos e desde 
-                            então tenho me dedicado a criar robôs que não apenas otimizam tarefas, mas também transformam a forma como as empresas operam. 
-                            Adquiri sólida experiência em ferramentas como <strong class="text-teal-400">AutomationEdge</strong> e <strong class="text-teal-400">n8n</strong>
-                            e tenho flexibilidade para desenvolver scripts em <strong class="text-teal-400">Python</strong>, <strong class="text-teal-400">VBScript</strong>,
-                            <strong class="text-teal-400">JavaScript</strong>, <strong class="text-teal-400">PowerShell</strong> e outros. Meu foco é entregar automações robustas,
-                            escaláveis e que geram impacto real nos KPIs dos meus clientes.
+                        <p class="text-gray-400 mb-8">
+                            Olá! Sou o Nickolas, especialista em RPA com foco em entregar soluções reais para desafios de negócio.
+                            Minha trajetória começou em 2013 como aprendiz de TI e evoluiu até a liderança de equipes técnicas, 
+                            passando por cargos de coordenador e gerente. Foi nessa jornada que entendi: tecnologia só faz sentido 
+                            quando resolve problemas de verdade — e foi justamente isso que me atraiu para o universo da automação.
+                            Desde 2020, mergulhei de cabeça no mundo do RPA e encontrei minha paixão: criar robôs que otimizam processos, 
+                            reduzem erros e impulsionam resultados.
+                            Tenho sólida experiência com ferramentas como <strong class="text-teal-400">AutomationEdge</strong> e 
+                            <strong class="text-teal-400">n8n</strong>, além de flexibilidade para desenvolver scripts em 
+                            <strong class="text-teal-400">Python</strong>, <strong class="text-teal-400">VBScript</strong>, 
+                            <strong class="text-teal-400">JavaScript</strong>, <strong class="text-teal-400">PowerShell</strong> e outros.
+                            Meu foco é entregar automações robustas, escaláveis e com impacto direto nos KPIs dos clientes.
                         </p>
                         <p class="text-gray-400 mb-8">
-                           Já atuei em projetos para a área de tecnologia, financeira, RH, logística e fiscal, 
-                           o que me deu uma visão ampla de como a automação pode ser um diferencial competitivo em qualquer setor.
+                            Já participei de projetos em áreas como tecnologia, financeiro, RH, logística e fiscal — 
+                            experiências que me deram uma visão ampla de como a automação pode ser um diferencial 
+                            competitivo em qualquer negócio. Hoje, atuo como freelancer parceiro de consultorias, 
+                            entregando fluxos inteligentes para os mais diversos clientes.
                         </p>
                         <h3 class="text-xl font-bold text-white mb-4">Principais Competências</h3>
                         <div class="flex flex-wrap gap-4">
@@ -177,11 +186,11 @@
                             <div class="space-y-3">
                                 <div class="flex justify-between items-center">
                                     <span class="text-sm text-gray-300">Redução de Tempo por DOF</span>
-                                    <span class="font-bold text-lg text-white counter" data-target="85">%</span> <!-- Redução de tempo (aprox. 85%) -->
+                                    <span class="font-bold text-lg text-white counter" data-target="85">0%</span>
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <span class="text-sm text-gray-300">Redução de Erros Cadastrais</span>
-                                    <span class="font-bold text-lg text-white counter" data-target="100">%</span> <!-- Redução de erros -->
+                                    <span class="font-bold text-lg text-white counter" data-target="100">0%</span>
                                 </div>
                                  <div class="flex justify-between items-center">
                                     <span class="text-sm text-gray-300">Redução de Risco de Multas</span>
@@ -209,11 +218,11 @@
                             <div class="space-y-3">
                                 <div class="flex justify-between items-center">
                                     <span class="text-sm text-gray-300">Redução do Tempo de Processamento</span>
-                                    <span class="font-bold text-lg text-white counter" data-target="80">%</span> <!-- Exemplo de redução de tempo -->
+                                    <span class="font-bold text-lg text-white counter" data-target="80">0%</span>
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <span class="text-sm text-gray-300">Minimização de Erros Cadastrais</span>
-                                    <span class="font-bold text-lg text-white counter" data-target="100">%</span> <!-- Redução de erros -->
+                                    <span class="font-bold text-lg text-white counter" data-target="100">0%</span> <!-- Redução de erros -->
                                 </div>
                                  <div class="flex justify-between items-center">
                                     <span class="text-sm text-gray-300">Redução do Risco de Inadimplência</span>
@@ -241,7 +250,7 @@
                             <div class="space-y-3">
                                 <div class="flex justify-between items-center">
                                     <span class="text-sm text-gray-300">Redução do Tempo de Atendimento</span>
-                                    <span class="font-bold text-lg text-white counter" data-target="90">%</span> <!-- Exemplo de redução de tempo (aprox. 90%) -->
+                                    <span class="font-bold text-lg text-white counter" data-target="90">0%</span> <!-- Exemplo de redução de tempo (aprox. 90%) -->
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <span class="text-sm text-gray-300">Otimização do Processo</span>
@@ -249,7 +258,7 @@
                                 </div>
                                  <div class="flex justify-between items-center">
                                     <span class="text-sm text-gray-300">Redução de Intervenção Manual</span>
-                                    <span class="font-bold text-lg text-white counter" data-target="100">%</span> <!-- Redução de intervenção manual -->
+                                    <span class="font-bold text-lg text-white counter" data-target="100">0%</span> <!-- Redução de intervenção manual -->
                                 </div>
                             </div>
                         </div>
@@ -276,7 +285,7 @@
                             <div class="space-y-3">
                                 <div class="flex justify-between items-center">
                                     <span class="text-sm text-gray-300">Redução do Tempo de Avaliação por Artigo</span>
-                                    <span class="font-bold text-lg text-white counter" data-target="100">%</span> <!-- Redução de tempo (de >10 min para 1 min) -->
+                                    <span class="font-bold text-lg text-white counter" data-target="100">0%</span> <!-- Redução de tempo (de >10 min para 1 min) -->
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <span class="text-sm text-gray-300">Aumento da Consistência da Avaliação</span>
@@ -297,60 +306,52 @@
         <section id="processo" class="py-20 md:py-32">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 scroll-reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Meu Processo de Trabalho</h2>
-                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto">Uma metodologia clara para garantir o sucesso do projeto, do início ao fim.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Como Entrego Projetos para Consultorias</h2>
+                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto">
+                        Atuo como parceiro de consultorias, assumindo a responsabilidade técnica e documental do projeto de RPA para o cliente final. 
+                        Todo o processo é transparente, profissional e com entrega de documentação completa (PDD, SDD, etc). 
+                    </p>
                 </div>
-                <div class="relative">
-                    <!-- Linha do tempo (visual) -->
-                    <div class="hidden md:block absolute left-1/2 top-5 bottom-5 w-0.5 bg-gray-700"></div>
-                    
-                    <!-- Item 1 -->
-                    <div class="md:grid md:grid-cols-2 md:gap-8 items-center mb-16 scroll-reveal">
-                        <div class="text-center md:text-right md:pr-8 mb-4 md:mb-0">
-                             <h3 class="text-2xl font-bold text-teal-400">01. Descoberta</h3>
-                             <p class="text-gray-400">Imersão no seu processo para entender os desafios, gargalos e oportunidades de automação.</p>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <!-- Passo 1 -->
+                    <div class="flex flex-col items-center text-center scroll-reveal">
+                        <div class="bg-gray-800 p-4 rounded-full border-2 border-teal-500 mb-4">
+                            <i data-lucide="search" class="w-10 h-10 text-teal-400"></i>
                         </div>
-                        <div class="flex justify-center items-center">
-                            <div class="bg-gray-800 p-4 rounded-full border-2 border-teal-500">
-                                <i data-lucide="search" class="w-10 h-10 text-teal-400"></i>
-                            </div>
-                        </div>
+                        <h3 class="text-2xl font-bold text-teal-400 mb-2">01. Imersão no Processo</h3>
+                        <p class="text-gray-400">
+                            Participo de reuniões junto à consultoria e ao cliente final para entender os desafios, mapear o processo e identificar oportunidades de automação.
+                        </p>
                     </div>
-                     <!-- Item 2 -->
-                    <div class="md:grid md:grid-cols-2 md:gap-8 items-center mb-16 scroll-reveal">
-                         <div class="flex justify-center items-center md:order-last">
-                            <div class="bg-gray-800 p-4 rounded-full border-2 border-teal-500">
-                                <i data-lucide="blueprint" class="w-10 h-10 text-teal-400"></i>
-                            </div>
+                    <!-- Passo 2 -->
+                    <div class="flex flex-col items-center text-center scroll-reveal">
+                        <div class="bg-gray-800 p-4 rounded-full border-2 border-teal-500 mb-4">
+                            <i data-lucide="workflow" class="w-10 h-10 text-teal-400"></i>
                         </div>
-                        <div class="text-center md:text-left md:pl-8 mt-4 md:mt-0">
-                             <h3 class="text-2xl font-bold text-teal-400">02. Desenho da Solução</h3>
-                             <p class="text-gray-400">Mapeamento do fluxo "To-Be" e criação do PDD (Process Design Document), o blueprint da automação.</p>
-                        </div>
+                        <h3 class="text-2xl font-bold text-teal-400 mb-2">02. Desenho e Documentação</h3>
+                        <p class="text-gray-400">
+                            Elaboro o fluxo "To-Be" e produzo toda a documentação do projeto (PDD, SDD, UAT, etc), garantindo clareza e alinhamento entre consultoria e cliente.
+                        </p>
                     </div>
-                     <!-- Item 3 -->
-                    <div class="md:grid md:grid-cols-2 md:gap-8 items-center mb-16 scroll-reveal">
-                        <div class="text-center md:text-right md:pr-8 mb-4 md:mb-0">
-                             <h3 class="text-2xl font-bold text-teal-400">03. Desenvolvimento</h3>
-                             <p class="text-gray-400">Codificação do robô seguindo as melhores práticas de modularidade, tratamento de exceções e logs.</p>
+                    <!-- Passo 3 -->
+                    <div class="flex flex-col items-center text-center scroll-reveal">
+                        <div class="bg-gray-800 p-4 rounded-full border-2 border-teal-500 mb-4">
+                            <i data-lucide="bot" class="w-10 h-10 text-teal-400"></i>
                         </div>
-                        <div class="flex justify-center items-center">
-                            <div class="bg-gray-800 p-4 rounded-full border-2 border-teal-500">
-                                <i data-lucide="bot" class="w-10 h-10 text-teal-400"></i>
-                            </div>
-                        </div>
+                        <h3 class="text-2xl font-bold text-teal-400 mb-2">03. Desenvolvimento e Testes</h3>
+                        <p class="text-gray-400">
+                            Desenvolvo o robô seguindo as melhores práticas, realizo testes completos e faço demonstrações para a consultoria e o cliente final.
+                        </p>
                     </div>
-                    <!-- Item 4 -->
-                    <div class="md:grid md:grid-cols-2 md:gap-8 items-center scroll-reveal">
-                         <div class="flex justify-center items-center md:order-last">
-                            <div class="bg-gray-800 p-4 rounded-full border-2 border-teal-500">
-                                <i data-lucide="rocket" class="w-10 h-10 text-teal-400"></i>
-                            </div>
+                    <!-- Passo 4 -->
+                    <div class="flex flex-col items-center text-center scroll-reveal">
+                        <div class="bg-gray-800 p-4 rounded-full border-2 border-teal-500 mb-4">
+                            <i data-lucide="rocket" class="w-10 h-10 text-teal-400"></i>
                         </div>
-                        <div class="text-center md:text-left md:pl-8 mt-4 md:mt-0">
-                             <h3 class="text-2xl font-bold text-teal-400">04. Implantação e Suporte</h3>
-                             <p class="text-gray-400">Go-live assistido, acompanhamento inicial e transferência de conhecimento para sua equipe.</p>
-                        </div>
+                        <h3 class="text-2xl font-bold text-teal-400 mb-2">04. Implantação e Suporte</h3>
+                        <p class="text-gray-400">
+                            Realizo o go-live, entrego toda a documentação final e ofereço suporte pós-implantação, sempre representando a consultoria com profissionalismo.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -360,8 +361,10 @@
         <section id="contato" class="py-20 md:py-32 bg-gray-900/50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 scroll-reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Vamos Conversar?</h2>
-                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto">Se você tem um processo que precisa ser otimizado, me envie uma mensagem. <br> Estou pronto para ajudar a encontrar a melhor solução de automação para o seu negócio.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Vamos Trabalhar Juntos?</h2>
+                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto">
+                        Se sua consultoria busca um desenvolvedor confiável para projetos de RPA, envie uma mensagem e vamos conversar sobre como posso agregar valor aos seus projetos.
+                    </p>
                 </div>
                 <div class="max-w-xl mx-auto scroll-reveal">
                     <form action="#" method="POST" class="space-y-6">
@@ -375,7 +378,7 @@
                         </div>
                         <div>
                             <label for="message" class="sr-only">Mensagem</label>
-                            <textarea name="message" id="message" rows="4" required class="w-full bg-gray-800 border-gray-700 text-white rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition" placeholder="Como posso ajudar?"></textarea>
+                            <textarea name="message" id="message" rows="4" required class="w-full bg-gray-800 border-gray-700 text-white rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition" placeholder="Conte sobre o projeto de RPA da sua consultoria ou como posso ajudar sua equipe a entregar mais valor para seus clientes."></textarea>
                         </div>
                         <div>
                             <button type="submit" class="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
@@ -435,27 +438,27 @@
 
         const animateCounter = (counter) => {
             const target = +counter.getAttribute('data-target');
-            const originalText = counter.innerText; // Store original text to preserve prefix/suffix
-            const prefix = originalText.match(/^[^\\d+-]*/)?.[0] || ''; // Capture non-digit, non-sign prefix
-            const suffix = originalText.match(/[^\\d%]*$/)?.[0] || ''; // Capture non-digit, non-% suffix
-            const isNegative = originalText.includes('-');
+            const originalText = counter.innerText;
+            // Ajuste: sufixo é tudo após o número (ex: %)
+            const match = originalText.match(/^(\D*)(-?\d+)(\D*)$/);
+            const prefix = match ? match[1] : '';
+            const suffix = match ? match[3] : '';
+            let current = 0;
 
             const updateCount = () => {
-                const currentCount = +counter.innerText.replace(/[^\\d.]/g, ''); // Remove all non-digits except decimal
-                const increment = target / speed;
-
-                if (currentCount < target) {
-                    let nextCount = Math.ceil(currentCount + increment);
-                    if (isNegative && nextCount > 0) nextCount = -nextCount; // Ensure negative if target was negative
-                    counter.innerText = prefix + nextCount + suffix;
-                    setTimeout(updateCount, 1);
+                const increment = Math.ceil(target / speed);
+                if (current < target) {
+                    current += increment;
+                    if (current > target) current = target;
+                    counter.innerText = prefix + current + suffix;
+                    setTimeout(updateCount, 10);
                 } else {
                     counter.innerText = prefix + target + suffix;
                 }
             };
             updateCount();
         };
-        
+
         const counterObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -466,12 +469,12 @@
         }, { threshold: 0.8 });
 
         counters.forEach(counter => {
-            // Initialize text based on target and original format
-            const target = +counter.getAttribute('data-target');
+            // Inicializa o texto como 0 + sufixo
             const originalText = counter.innerText;
-            const prefix = originalText.match(/^[^\\d+-]*/)?.[0] || '';
-            const suffix = originalText.match(/[^\\d%]*$/)?.[0] || '';
-            counter.innerText = prefix + '0' + suffix; // Start from 0, keeping original prefix/suffix
+            const match = originalText.match(/^(\D*)(-?\d+)(\D*)$/);
+            const prefix = match ? match[1] : '';
+            const suffix = match ? match[3] : '';
+            counter.innerText = prefix + '0' + suffix;
             counterObserver.observe(counter);
         });
 
